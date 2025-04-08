@@ -7,7 +7,8 @@ return {
           provider = 'gemini',
           provider_options = {
             gemini = {
-              api_key = 'GEMINI_API_KEY',
+              -- api_key = 'GEMINI_API_KEY',
+              api_key = function() return io.open("/home/rafperez/.gemini_api_key"):read() end,
             },
           },
           virtualtext = {
